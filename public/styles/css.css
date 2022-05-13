@@ -9,7 +9,7 @@
 }
 
 body {
-    background:url('../images/bg-stars.svg');
+    background:url('../images/bg-stars.svg'),linear-gradient(to bottom, var(--VeryDarkBlue), #3f2d4d);
     background-color: var(--VeryDarkBlue);
     background-repeat: no-repeat;
 }
