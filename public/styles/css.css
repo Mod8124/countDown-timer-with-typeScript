@@ -66,18 +66,19 @@ h1 {
 
 .displays::before {
     position: absolute;
+    animation: 1s change infinite;
     z-index: 10;
     content:"";
     height: 52%;
     width: 100%;
-    top:0;
-    background-color:hsl(236, 21%, 24%);
+    top:0%;
+    background-color:hsl(236, 21%, 22%);
 }
 
 .displays p {
     position: relative;
-    z-index: 1000;
     cursor: default;
+    z-index: 11;
 }
 
 .circle {
@@ -131,9 +132,15 @@ h1 {
 footer {
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
+    background:linear-gradient(to right, var(--VeryDarkBlue), #3f2d4d);
 }
 footer {
     color:var(--White);
+}
+
+footer a {
+    color: var(--SoftRed);
 }
 
 @media screen and ( min-width:500px) {
@@ -143,7 +150,7 @@ footer {
 
 
     .displays {
-        font-size: 400%;
-        min-height: 180px;
+        font-size: 500%;
+        min-height: 160px;
     }
 }
