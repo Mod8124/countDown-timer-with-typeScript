@@ -9,7 +9,7 @@ const START_DAY = new Date();
 // year month day (month start from zero to eleven) 
 const END_DAY = new Date(2023, 6, 29);
 // calculate days between START_DAY and END_DAY;
-const DAYS_UNTIL_END_DAY = Math.ceil(((END_DAY - START_DAY) / (1000 * 60 * 60 * 24)));
+const DAYS_UNTIL_END_DAY = Math.ceil(((END_DAY.getTime() - START_DAY.getTime()) / (1000 * 60 * 60 * 24)));
 const getTime = (secs) => {
     const now = Date.now();
     const then = now + (secs * 1000);
