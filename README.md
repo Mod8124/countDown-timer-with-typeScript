@@ -9,7 +9,7 @@ The countdown start from current date to `END_DAY`
 ```javascript
    const END_DAY = new Date(2023,6, 29)
    // Only change to the date that you want (year, month, day)
-   // Month start from zero to eleven
+   // Month starts from zero to eleven
 
    // Example Christmas
    const END_DAY = new Date(2022, 11, 24)
