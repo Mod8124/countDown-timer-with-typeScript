@@ -3,7 +3,14 @@ const displayHour = document.querySelector('.displayHours p') as HTMLParagraphEl
 const displayMinutes = document.querySelector('.displayMinutes p') as HTMLParagraphElement;
 const displaySeconds = document.querySelector('.displaySeconds p') as HTMLParagraphElement;
 
-let countDown:any;
+let countDown:number;
+
+const SECONDS_DAY:number = 86400;
+const START_DAY:any = new Date();
+// year month day (month start from zero to eleven) 
+const END_DAY:any = new Date(2023, 6, 29)
+// calculate days between START_DAY and END_DAY;
+const DAYS_UNTIL_END_DAY = Math.ceil(((END_DAY - START_DAY) / (1000 * 60 * 60 * 24))); 
 
 const getTime = (secs:number) => {
    const now = Date.now();
@@ -15,11 +22,10 @@ const getTime = (secs:number) => {
     const secondsLeft = Math.floor((then - Date.now())/1000)
     if(secondsLeft<=0) {
         clearInterval(countDown)
-        getTime(86400*14)
+        getTime(SECONDS_DAY*DAYS_UNTIL_END_DAY)
     }
     displayTime(secondsLeft)
 },1000)
-
 
 }
 
@@ -29,8 +35,6 @@ const displayTime = (secs:number) => {
     const hour = Math.floor(minutes/60);
     const days = Math.floor(hour/24);
 
-    console.dir(minutes)
-
     displaySeconds.innerHTML = `${remainderseconds < 10? '0':""}${remainderseconds}`;
     displayMinutes.innerHTML = `${minutes > 60 ? minutes.toString().slice(-2):minutes}`;
     displayHour.innerHTML = `${hour>24 ? hour.toString().slice(-2):hour}`;
@@ -38,4 +42,4 @@ const displayTime = (secs:number) => {
 
 }
 
-getTime(86400*14)
+getTime(SECONDS_DAY*DAYS_UNTIL_END_DAY)
